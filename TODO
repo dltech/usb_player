@@ -1,0 +1,1 @@
+1. I want to get rid of libopencm3 because it is on LGPL licence and I do not like STM32 STDPeriph library.
