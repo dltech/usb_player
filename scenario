@@ -1,0 +1,25 @@
+Introduction
+Nowadays we living in strange time. Time of international standards and big companies.
+All that people are accustomated to get usually is a result of long-term work of unions of teams from the several continents.
+A huge business sharks were strikes its fans with their revolutionary products, and then dies or being swallowed by others.
+In that situation it is very hard to be userful, and truly impossible to impress anyone by itself, if you want.
+So, beauty queen interests in speaking circuits. She likes photoshoots at abandoned locations and she have specific humor sense. I think she can be trusted. 
+But more than ten years have passed since the message was published. Anyway, what she mean? Speaker systems? Hmm, I think that it is walkie talkie.
+All right, I am engineer, go to solder station and built this radio prototype.
+
+Main part
+Now we can found near the food in the supermarket simple analogue portable radios, but its sound quality not so well. That is why in 2010s standard of digital portable radios was invented.
+Of course, I will do not take the chips like in first solution. I would take 4FSK digital transmitter from Ti and an St microcontroller. With this chipset my solution would be as compact as clip.
+Digital sound makes sound on walkie talkie as quality as on mobile phone. I choose speex speech codec, also amr is appropriate. They both written in C and use fixed-point math, that means both are appropriate.
+Likewise why not to add player function, I think that will not complicate the design too much. I may use built in 12 bit DAC, but listen to music in quality below than audio CD is not appropriate for me.
+Thats why I would add Ti PCM frontend and headphones amp. With this solution sound will be like on good custom pc sound card. 
+Some years ago when I bought my first mp3, I understand that normal digital sound is a drug. 
+Acid remixes, like the Prodigy, can pass you into altered state of mind, and new retro bands and old remastered hits can move you into the past.
+In conclusion, I think that combining functions of talking with your frinds while bicycle ride, for example, and listerning music can bring a little magic in users life.
+Let's build it using free software, github and home lab.
+
+Range test on a bike, the end.
+
+
+
+
