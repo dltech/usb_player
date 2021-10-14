@@ -57,14 +57,14 @@ void DMA1_Channel5_Handler(void);
 void DMA1_Channel6_Handler(void);
 void DMA1_Channel7_Handler(void);
 void ADC_Handler(void);
-void usb_hp_can_tx_Handler(void);
-void usb_lp_can_rx_Handler(void);
-void CAN_RX1_Handler(void);
-void CAN_SCE_Handler(void);
+void CAN1_TX_Handler(void);
+void CAN1_RX0_Handler(void);
+void CAN1_RX1_Handler(void);
+void CAN1_SCE_Handler(void);
 void EXTI9_5_Handler(void);
-void TIM1_BRK_TIM15_Handler(void);
-void TIM1_UP_TIM16_Handler(void);
-void TIM1_TRG_COM_TIM17_Handler(void);
+void TIM1_BRK_Handler(void);
+void TIM1_UP_Handler(void);
+void TIM1_TRG_COM_Handler (void);
 void TIM1_CC_Handler(void);
 void TIM2_Handler(void);
 void TIM3_Handler(void);
@@ -80,24 +80,25 @@ void USART2_Handler(void);
 void USART3_Handler(void);
 void EXTI15_10_Handler(void);
 void RTCAlarm_Handler(void);
-void USB_Wakeup_Handler(void);
-void TIM8_BRK_Handler(void);
-void TIM8_UP_Handler(void);
-void TIM8_TRG_COM_Handler(void);
-void TIM8_CC_Handler(void);
-void ADC3_Handler(void);
-void FSMC_Handler(void);
-void SDIO_Handler(void);
+void OTG_FS_WKUP_Handler(void);
 void TIM5_Handler(void);
 void SPI3_Handler(void);
 void UART4_Handler(void);
 void UART5_Handler(void);
-void TIM6_DAC_Handler(void);
+void TIM6_Handler(void);
 void TIM7_Handler(void);
 void DMA2_Channel1_Handler(void);
 void DMA2_Channel2_Handler(void);
 void DMA2_Channel3_Handler(void);
-void DMA2_Channel4_5_Handler(void);
+void DMA2_Channel4_Handler(void);
+void DMA2_Channel5_Handler(void);
+void ETH_Handler(void);
+void ETH_WKUP_Handler(void);
+void CAN2_TX_Handler(void);
+void CAN2_RX0_Handler(void);
+void CAN2_RX1_Handler(void);
+void CAN2_SCE_Handler(void);
+void OTG_FS_Handler(void);
 
 /* -------------------------  Interrupt Number Definition  ------------------------ */
 
@@ -134,14 +135,14 @@ typedef enum IRQn
   DMA1_Channel6_IRQn			= 16,
   DMA1_Channel7_IRQn			= 17,
   ADC_IRQn						= 18,
-  usb_hp_can_tx_IRQn			= 19,
-  usb_lp_can_rx_IRQn			= 20,
-  CAN_RX1_IRQn					= 21,
-  CAN_SCE_IRQn					= 22,
+  CAN1_TX_IRQn      			= 19,
+  CAN1_RX0_IRQn		           	= 20,
+  CAN1_RX1_IRQn					= 21,
+  CAN1_SCE_IRQn					= 22,
   EXTI9_5_IRQn				 	= 23,
-  TIM1_BRK_TIM15_IRQn			= 24,
-  TIM1_UP_TIM16_IRQn			= 25,
-  TIM1_TRG_COM_TIM17_IRQn		= 26,
+  TIM1_BRK_IRQn     			= 24,
+  TIM1_UP_IRQn      			= 25,
+  TIM1_TRG_COM_IRQn     		= 26,
   TIM1_CC_IRQn					= 27,
   TIM2_IRQn						= 28,
   TIM3_IRQn						= 29,
@@ -157,25 +158,27 @@ typedef enum IRQn
   USART3_IRQn					= 39,
   EXTI15_10_IRQn				= 40,
   RTCAlarm_IRQn					= 41,
-  USB_Wakeup_IRQn				= 42,
-  TIM8_BRK_IRQn					= 43,
-  TIM8_UP_IRQn					= 44,
-  TIM8_TRG_COM_IRQn				= 45,
-  TIM8_CC_IRQn					= 46,
-  ADC3_IRQn						= 47,
-  FSMC_IRQn						= 48,
-  SDIO_IRQn						= 49,
+  OTG_FS_WKUP_IRQn				= 42,
+// ...
   TIM5_IRQn						= 50,
   SPI3_IRQn						= 51,
   UART4_IRQn					= 52,
   UART5_IRQn					= 53,
-  TIM6_DAC_IRQn					= 54,
+  TIM6_IRQn 					= 54,
   TIM7_IRQn						= 55,
   DMA2_Channel1_IRQn			= 56,
   DMA2_Channel2_IRQn			= 57,
   DMA2_Channel3_IRQn			= 58,
-  DMA2_Channel4_5_IRQn  		= 59
-  /* Interrupts 60 .. 224 are left out */
+  DMA2_Channel4_IRQn      		= 59,
+  DMA2_Channel5_IRQn      		= 60,
+  ETH_IRQn                      = 61,
+  ETH_WKUP_IRQn                 = 62,
+  CAN2_TX_IRQn      			= 63,
+  CAN2_RX0_IRQn		           	= 64,
+  CAN2_RX1_IRQn					= 65,
+  CAN2_SCE_IRQn					= 66,
+  OTG_FS_IRQn				 	= 67
+  /* Interrupts 68 .. 224 are left out */
 } IRQn_Type;
 
 
@@ -214,7 +217,7 @@ typedef enum IRQn
 #define __Vendor_SysTickConfig    0U        /* Set to 1 if different SysTick Config is used */
 
 #include "../CMSIS_5/CMSIS/Core/Include/core_cm3.h"                       /* Processor and core peripherals */
-#include "system_stm32f103.h"                  /* System Header */
+#include "system_stm32f105.h"                  /* System Header */
 
 
 /* --------  End of section using anonymous unions and disabling warnings  -------- */

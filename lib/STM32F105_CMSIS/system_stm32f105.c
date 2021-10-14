@@ -23,7 +23,7 @@
  * limitations under the License.
  */
 
-#include "stm32f103.h"
+#include "stm32f105.h"
 #include "../rcc.h"
 
 /*----------------------------------------------------------------------------
