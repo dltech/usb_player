@@ -1,6 +1,0 @@
-make -C tl_replacement clean
-make -C tl_replacement
-st-flash erase
-st-util -p 5555 -n
-
-

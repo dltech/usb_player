@@ -1,3 +1,0 @@
-target remote localhost:5555
-load tl_replacement/tl494_replacement.elf
-continue
