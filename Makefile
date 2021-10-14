@@ -61,4 +61,4 @@ $(TARGET): $(OBJECTS)
 #.PHONY:
 clean:
 	@rm -rf $(ODIR)
-	@rm -r $(TARGET)
+	@rm -r $(TARGET_DIR)/$(TARGET)

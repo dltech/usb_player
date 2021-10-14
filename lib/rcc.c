@@ -50,12 +50,16 @@ void sysClk()
     uint32_t timeout = 1e8;
     while ( ((RCC_CR & HSERDY) == 0) && (--timeout > 1) );
     // рассчет на тактирование от кварца 8 мГц, на максимальную частоту в 72 мГц
-    // тактирование USB настроено нормально
+    // бит делителя USB 0, предделитель 1,5
     // AHB 72, APB1 36, APB2 72 (разрешенный максимум)
     // на АЦП забили, не используем.
+    // I2S2, I2S3 от PLL3
+    // PREDIV1SRC = 0, PPRE1 = 1, на вход PLL те же 8МГц, что и выдает кварц
+    // PPRE2 = 1, PLL3MUL = 9, тактирование I2S 72 МГц, что бы получить 44100
     uint32_t cfgr = PLLMUL9 | PLLSRC | PPRE2_HCLK_NODIV | \
                     PPRE1_HCLK_DIV2 | HPRE_SYSCLK_NODIV;
     RCC_CFGR = cfgr;
+    RCC_CFGR2 = I2S3SRC | I2S2SRC | PREDDIV1_1 | PREDDIV2_1 | PLL3MUL9;
     // что то с памятью, копипаста с функций stmhal
     FLASH_ACR = PRFTBE | LATENCY_72M;
     // передергиваем PLL, что бы точно все включилось
@@ -71,11 +75,17 @@ void sysClk()
     RCC_CR |= PLLON;
     timeout = 9e6;
     while( ((RCC_CR & PLLRDY) == 0) && (--timeout > 1) );
-
     // включаем sysclk, ждем
     RCC_CFGR |= SW_PLL;
     timeout = 9e6;
     while( ((RCC_CFGR & SWS_MASK) != SWS_PLL) && (--timeout > 1) );
+    // передергиваем и PLL3 (источник тактирования I2S)
+    RCC_CR &= ~((uint32_t)PLL3ON);
+    timeout = 9e6;
+    while( ((RCC_CR & PLL3RDY) != 0) && (--timeout > 1) );
+    RCC_CR |= PLL3ON;
+    timeout = 9e6;
+    while( ((RCC_CR & PLL3RDY) == 0) && (--timeout > 1) );
 }
 
 void suspSysClk()
