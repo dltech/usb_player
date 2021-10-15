@@ -301,7 +301,7 @@
 #define ETHMACTXEN  0x00008000
 #define ETHMACEN    0x00004000
 #define OTGFSEN     0x00001000
-#define CRCEN       0x00000040
+#define AHB_CRCEN   0x00000040
 #define FLITFEN     0x00000010
 #define SRAMEN      0x00000004
 #define DMA2EN      0x00000002
