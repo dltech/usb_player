@@ -12,4 +12,6 @@ MP3 decoder\
 SPI\
 CC1101 4FSK\
 speex build\
-OTG FS USB FLASH (sd adapter)
+OTG FS USB FLASH (sd adapter)\
+OTG FS USB FLASH FAT32 HOST\
+STM32 DAC sound output
