@@ -138,10 +138,10 @@
 /* DUAL DAC 8-bit right aligned data holding register */
 #define DAC_DHR8RD  MMIO32(DAC_BASE + 0x28)
 // DAC channel2 8-bit right-aligned data
-#define DACC2DHR_OFFS   8
-#define DACC2DHR_MSK    0xff00
+#define DACC2DHR8_OFFS   8
+#define DACC2DHR8_MSK    0xff00
 // DAC channel1 8-bit right-aligned data
-#define DACC1DHR_MSK    0x00ff
+#define DACC1DHR8_MSK    0x00ff
 
 /* DAC channel1 data output register */
 #define DAC_DOR1    MMIO32(DAC_BASE + 0x2c)

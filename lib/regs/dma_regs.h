@@ -92,9 +92,7 @@
 #define CGIF6      0x0100000
 #define CGIF7      0x1000000
 
-
-
-/* DMA channel x configuration register */
+/* DMA channel x configuration registers */
 #define DMA1_CCR1   MMIO32(DMA1_BASE + 0x008)
 #define DMA2_CCR1   MMIO32(DMA2_BASE + 0x008)
 #define DMA1_CCR2   MMIO32(DMA1_BASE + 0x01c)
@@ -141,6 +139,7 @@
 // Channel enable
 #define DMA_EN          0x0001
 
+/* DMA channel x number of data registers */
 #define DMA1_CNDTR1 MMIO32(DMA1_BASE + 0x00c)
 #define DMA2_CNDTR1 MMIO32(DMA2_BASE + 0x00c)
 #define DMA1_CNDTR2 MMIO32(DMA1_BASE + 0x020)
@@ -155,7 +154,9 @@
 #define DMA2_CNDTR6 MMIO32(DMA2_BASE + 0x070)
 #define DMA1_CNDTR7 MMIO32(DMA1_BASE + 0x084)
 #define DMA2_CNDTR7 MMIO32(DMA2_BASE + 0x084)
+// NDT[15:0]: Number of data to transfer
 
+/* DMA channel x peripheral address register */
 #define DMA1_CPAR1  MMIO32(DMA1_BASE + 0x010)
 #define DMA2_CPAR1  MMIO32(DMA2_BASE + 0x010)
 #define DMA1_CPAR2  MMIO32(DMA1_BASE + 0x024)
@@ -170,8 +171,9 @@
 #define DMA2_CPAR6  MMIO32(DMA2_BASE + 0x074)
 #define DMA1_CPAR7  MMIO32(DMA1_BASE + 0x088)
 #define DMA2_CPAR7  MMIO32(DMA2_BASE + 0x088)
+// PA[31:0]: Peripheral address
 
-
+/* DMA channel x memory address register */
 #define DMA1_CMAR1  MMIO32(DMA1_BASE + 0x014)
 #define DMA2_CMAR1  MMIO32(DMA2_BASE + 0x014)
 #define DMA1_CMAR2  MMIO32(DMA1_BASE + 0x028)
@@ -186,10 +188,6 @@
 #define DMA2_CMAR6  MMIO32(DMA2_BASE + 0x078)
 #define DMA1_CMAR7  MMIO32(DMA1_BASE + 0x08c)
 #define DMA2_CMAR7  MMIO32(DMA2_BASE + 0x08c)
-
-
-
-
-
+// MA[31:0]: Memory address
 
 #endif

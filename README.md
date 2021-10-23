@@ -1,7 +1,9 @@
 # usb_player
 simple USB SD mp3 player based on stm32 MCU\
 TODO:\
-register defs\
+schematic\
+board\
+register defs (OK)\
 RCC (OK)\
 I2S PCM1754 sound out\
 lm4811 power regul (OK)\
