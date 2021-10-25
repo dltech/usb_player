@@ -1,7 +1,7 @@
 #ifndef H_RCC
 #define H_RCC
 
-#include "regs/rcc_regs_con.h"
+#include "stm_regs/rcc_regs_con.h"
 
 
 // maximal frequency system clock
