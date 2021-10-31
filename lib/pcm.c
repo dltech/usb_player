@@ -1,3 +1,4 @@
-#I2S_DIV = 25
-#I2S_ODD = 1
-#Fs = 44100
+//PLL3MUL10
+//I2S_DIV = 11
+//I2S_ODD = 1
+//Fs = 44157 

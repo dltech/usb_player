@@ -55,7 +55,8 @@ void sysClk()
     // на АЦП забили, не используем.
     // I2S2, I2S3 от PLL3
     // PREDIV1SRC = 0, PPRE1 = 1, на вход PLL те же 8МГц, что и выдает кварц
-    // PPRE2 = 1, PLL3MUL = 9, тактирование I2S 72 МГц, что бы получить 44100
+    // PPRE2 = 1, PLL3MUL = 20, тактирование I2S 260 МГц, что бы получить 44100
+    // вместе с мастер клоком
     uint32_t cfgr = PLLMUL9 | PLLSRC | PPRE2_HCLK_NODIV | \
                     PPRE1_HCLK_DIV2 | HPRE_SYSCLK_NODIV;
     RCC_CFGR = cfgr;

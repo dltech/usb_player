@@ -212,15 +212,11 @@
 #define CHANBW81K   0xd0
 #define CHANBW68K   0xe0
 #define CHANBW58K   0xf0
-//
-//#define
+// The exponent of the user specified symbol rate
 
 /* Modem configuration reg3 */
 #define MDMCFG3         0x11
-//
-//#define
-//
-//#define
+// The mantissa of the user specified symbol rate.
 
 /* Modem configuration reg2 */
 #define MDMCFG2         0x12
@@ -258,19 +254,15 @@
 #define NUM_PREAMBLE16  0x60
 #define NUM_PREAMBLE24  0x70
 // 2 bit exponent of channel spacing
-#define NUM_PREAMBLE24  0x70
 
 /* Modem configuration reg0 */
 #define MDMCFG0         0x14
-//
-//#define
+// 8-bit mantissa of channel spacing.
 
 /* Modem deviation setting */
 #define DEVIATN         0x15
-//
-//#define
-//
-//#define
+// Deviation exponent.
+// Mantissa of the nominal frequency deviation
 
 /* Main Radio Control State Machine configuration reg2 */
 #define MCSM2           0x16
