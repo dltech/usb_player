@@ -20,6 +20,7 @@
 
 // crystal oscillator frequency in MHz
 #define XOSC        26000000
+// coefficients for parameters calculation
 #define OFFS_COEF       XOSC/16384
 #define CARRIER_COEF    XOSC/65536
 
@@ -163,6 +164,12 @@
 #define PKT_FORMAT_SYNC_SERIAL  0x10
 #define PKT_FORMAT_RANDOM_TX    0x20
 #define PKT_FORMAT_ASYNC_SERIAL 0x30
+// CRC calculation in TX and CRC check in RX enabled
+#define CRC_EN                  0x04
+// Configure the packet length
+#define LENGTH_CONFIG_FIXED     0x00
+#define LENGTH_CONFIG_VARIABLE  0x01
+#define LENGTH_CONFIG_INFINITE  0x02
 
 /* Device address */
 #define ADDR            0x09
@@ -174,7 +181,7 @@
 /* Frequency synthesizer control reg1 */
 #define FSCTRL1         0x0b
 // The desired IF frequency to employ in RX.
-#define FREQ_IF(rx_if)  ((((uint32_t)rx_if)*1024)/XOSC)
+#define FREQ_IF(rx_if)  ((uint8_t)((((uint32_t)rx_if)*1024)/XOSC))
 
 /* Frequency synthesizer control reg0 */
 #define FSCTRL0         0x0c

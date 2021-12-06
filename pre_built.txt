@@ -1,0 +1,21 @@
+CC=gcc
+
+.PHONY: all clean
+.SECONDARY: main-build
+
+all: pre-build main-build
+
+pre-build:
+    @echo PRE
+
+post-build:
+    @echo POST
+
+main-build: target
+
+target: $(OBJS)
+    $(CC) -o $@ $(OBJS)
+    @$(MAKE) --no-print-directory post-build
+
+clean:
+    rm -f $(OBJS) target
