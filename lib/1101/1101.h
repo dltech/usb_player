@@ -1,14 +1,6 @@
 #include "1101regs.h"
 #include "1101table.h"
 
-/*** here are parameters for calculating in pre-built script ***/
-#define DATA_RATE       115051
-#define IF_FREQ         381000
-#define CARRIER_FREQ    433000000
-#define RX_BW           100000
-#define DEVIATION_FREQ  15000
-#define CHANNEL_FREQ    70000
-
 /*** complete config ***/
 #define IOCFG2_CONF     GDO_CFG_HIGH_IMPEDANCE
 #define IOCFG1_CONF     GDO_CFG_HIGH_IMPEDANCE
@@ -21,19 +13,17 @@
 #define PKTCTRL0_CONF   PKT_FORMAT_NORMAL | CRC_EN | LENGTH_CONFIG_FIXED
 #define ADDR_CONF       5
 #define CHANNR_CONF     0
-#define FSCTRL1_CONF
-#define FSCTRL0_CONF
-#define FREQ2_CONF
-#define FREQ1_CONF
-#define FREQ0_CONF      
-
-#define MDMCFG4_CONF    CHANBW102K |
-#define MDMCFG3_CONF
-#define MDMCFG2_CONF
-#define MDMCFG1_CONF
-#define MDMCFG0_CONF
-
-#define DEVIATN_CONF
+#define FSCTRL1_CONF    FSCTRL1_CALCULATED
+#define FSCTRL0_CONF    FSCTRL0_CALCULATED
+#define FREQ2_CONF      FREQ2_CALCULATED
+#define FREQ1_CONF      FREQ1_CALCULATED
+#define FREQ0_CONF      FREQ0_CALCULATED
+#define MDMCFG4_CONF    MDMCFG4_CALCULATED
+#define MDMCFG3_CONF    MDMCFG3_CALCULATED
+#define MDMCFG2_CONF    MOD_FORMAT_4FSK | SYNC_MODE_30_32SYNC
+#define MDMCFG1_CONF    NUM_PREAMBLE3 | MDMCFG1_CALCULATED
+#define MDMCFG0_CONF    MDMCFG0_CALCULATED
+#define DEVIATN_CONF    DEVIATN_CALCULATED
 
 #define MCSM2_CONF
 #define MCSM1_CONF
