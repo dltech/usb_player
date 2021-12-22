@@ -57,20 +57,17 @@
 #define AGCTRL1_CONF
 #define AGCTRL0_CONF
 
-#define WOREVT1_CONF
-#define WOREVT0_CONF
-
-#define WORCTRL_CONF
-
-#define FREND1_CONF
-#define FREND0_CONF
-
-#define FSCAL3_CONF
-#define FSCAL2_CONF
-#define FSCAL1_CONF
-#define FSCAL0_CONF
-
-#define RCCTRL1_CONF
-#define RCCTRL0_CONF
+#define WOREVT1_CONF    0x87
+#define WOREVT0_CONF    0x6b
+#define WORCTRL_CONF    0xfb
+// obtained from smartRF
+#define FREND1_CONF     LNA_CURRENT1 | LNA2MIX_CURRENT1 | LODIV_BUF_CURRENT_RX1 | MIX_CURRENT2
+#define FREND0_CONF     0x10
+#define FSCAL3_CONF     0xea
+#define FSCAL2_CONF     0x2a
+#define FSCAL1_CONF     0x00
+#define FSCAL0_CONF     0x1f
+#define RCCTRL1_CONF    0x41
+#define RCCTRL0_CONF    0x00
 
 #endif

@@ -36,8 +36,8 @@ channelFreq = int(rfParam['channelFreq'])
 rxBw = int(rfParam['rxBw'])
 
 # calculating register values from parameters
-ifCalc = int((int(ifFreq)* int(1024)) / int(oscFreq)) & int(0x0f)
-afcOffsCalc = int(int(afcOffs) / (int(oscFreq) / int(16384))) & int(0xff)
+ifCalc = int(int(int(ifFreq)* int(1024)) / int(oscFreq)) & int(0x0f)
+afcOffsCalc = int(int(afcOffs) / int(int(oscFreq) / int(16384))) & int(0xff)
 carrierCalc = int((int(carrierFreq)*int(65536)) / int(oscFreq)) & int(0x3fffff)
 rxBwE = int(math.log((int(oscFreq)/int(32)/int(rxBw)), 2)) & int(0x03)
 rxBwM = int(int(oscFreq)*(int(2)**rxBwE)*int(8) - int(4)) & int(0x03)
@@ -46,7 +46,7 @@ dataRateM = int(int(dataRate)*(int(2)**(28-dataRateE))/int(oscFreq) - 256) & int
 deviationE = int(math.log((int(deviationFreq)*int(16384)/int(oscFreq)),2)) & int(0x07)
 deviationM = int(int(deviationFreq)*(int(2)**(17-dataRateE))/int(oscFreq) - 8) & int(0x07)
 channelE = int(math.log((int(channelFreq)*int(1024)/int(oscFreq)),2)) & int(0x03)
-channelM = int(int(channelFreq)*(int(2)**(18-dataRateE))/int(oscFreq) - 256) & int(0xff)
+channelM = int(int(channelFreq)*(int(2)**(18-channelE))/int(oscFreq) - 256) & int(0xff)
 
 # output of registers with calculated parameters in C macro readable form
 header = "/*\n * Part of CC1101 library, automatically generated rf parameters.\n *\n * Copyright 2021 Mikhail Belkin <dltech174@gmail.com> \n\
@@ -73,7 +73,7 @@ output.write(header)
 output.write(macroPre+ifReg+macroPost+hex(ifCalc)+"\n")
 output.write(macroPre+afcOffsReg+macroPost+hex(afcOffsCalc)+"\n")
 output.write(macroPre+carrierReg1+macroPost+hex(carrierCalc>>16)+"\n")
-output.write(macroPre+carrierReg2+macroPost+hex((carrierCalc>>7)&0xff)+"\n")
+output.write(macroPre+carrierReg2+macroPost+hex((carrierCalc>>8)&0xff)+"\n")
 output.write(macroPre+carrierReg3+macroPost+hex(carrierCalc&0xff)+"\n")
 output.write(macroPre+rxBwReg+macroPost+hex((rxBwE<<6) + (rxBwM<<4) + dataRateE)+"\n")
 output.write(macroPre+dataRateReg+macroPost+hex(dataRateM)+"\n")

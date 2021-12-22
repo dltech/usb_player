@@ -1,7 +1,7 @@
 /*
  * Part of CC1101 library, automatically generated rf parameters.
  *
- * Copyright 2021 Mikhail Belkin <dltech174@gmail.com>
+ * Copyright 2021 Mikhail Belkin <dltech174@gmail.com> 
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,13 +16,13 @@
  * limitations under the License.
  */
 
-#define	FSCTRL1_CALCULATED	0xf
+#define	FSCTRL1_CALCULATED	0x6
 #define	FSCTRL0_CALCULATED	0x0
 #define	FREQ2_CALCULATED	0x10
-#define	FREQ1_CALCULATED	0x4e
+#define	FREQ1_CALCULATED	0xa7
 #define	FREQ0_CALCULATED	0x62
 #define	MDMCFG4_CALCULATED	0xcc
 #define	MDMCFG3_CALCULATED	0x21
 #define	MDMCFG1_CALCULATED	0x1
-#define	MDMCFG0_CALCULATED	0x1
+#define	MDMCFG0_CALCULATED	0x60
 #define	DEVIATN_CALCULATED	0x31
