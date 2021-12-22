@@ -1,7 +1,7 @@
 #ifndef H_1101_REGS
 #define H_1101_REGS
 /*
- * Part of CC1101 library, commands definitions.
+ * Part of CC1101 library, register definitions.
  *
  * Copyright 2021 Mikhail Belkin <dltech174@gmail.com>
  *
