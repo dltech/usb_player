@@ -56,7 +56,7 @@
 #define AGCTRL2_CONF
 #define AGCTRL1_CONF
 #define AGCTRL0_CONF
-
+// default values
 #define WOREVT1_CONF    0x87
 #define WOREVT0_CONF    0x6b
 #define WORCTRL_CONF    0xfb
