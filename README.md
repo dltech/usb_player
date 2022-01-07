@@ -1,7 +1,7 @@
 # usb_player
 simple USB SD mp3 player based on stm32 MCU\
 TODO:\
-schematic\
+schematic (OK)\
 board\
 register defs (OK)\
 RCC (OK)\
