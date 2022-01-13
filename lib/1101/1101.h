@@ -70,4 +70,20 @@
 #define RCCTRL1_CONF    0x41
 #define RCCTRL0_CONF    0x00
 
+/* pin settings */
+#define NSS_1101    GPIO1
+#define SCLK_1101   GPIO2
+#define MOSI_1101   GPIO3
+#define GD0_1101    GPIO4
+
+/* fast mode switch options */
+enum {
+    SPWD = 11,
+    STX,
+    SIDLE,
+    SRX
+}
+void strobeCtrl(int parameter);
+
+
 #endif

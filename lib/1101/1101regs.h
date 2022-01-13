@@ -691,4 +691,20 @@
 /* No operation. */
 #define SNOP    0x3d
 
+/************************* Status bits ****************************************/
+// Should always be low when using the SPI interface.
+#define CHIP_RDY    0x80
+// Indicates the current main state machine mode.
+#define STATE_IDLE          0x00
+#define STATE_RX            0x10
+#define STATE_TX            0x20
+#define STATE_FSTXON        0x30
+#define STATE_CALIBRATE     0x40
+#define STATE_SETTLING      0x50
+#define STATE_RXFIFO_OVR    0x60
+#define STATE_TXFIFO_UDR    0x70
+#define STATE_MSK           0x70
+// The number of bytes available in the RX FIFO or free bytes in the TX FIFO.
+#define FIFO_BYTES_MSK      0x0f
+
 #endif
