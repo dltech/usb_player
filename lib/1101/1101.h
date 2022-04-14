@@ -78,12 +78,20 @@
 
 /* fast mode switch options */
 enum {
-    SPWD = 11,
-    STX,
-    SIDLE,
-    SRX
-}
-void strobeCtrl(int parameter);
+    SPWD = 11,  // power down
+    STX,        // go to tx state
+    SIDLE,      // go to idle state
+    SRX,        // go to RX state
+    SRES        // reset command strobe
+};
 
+void strobeCtrl(int parameter);
+void strobeCmd(uint8_t cmd);
+
+
+const struct parameters{
+    const int strobeApplyUs = 60;
+    const int strobeTactUs = 10;
+} param1101;
 
 #endif
