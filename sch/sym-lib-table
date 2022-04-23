@@ -1,3 +1,4 @@
 (sym_lib_table
   (lib (name native)(type Legacy)(uri ${KIPRJMOD}/native.lib)(options "")(descr ""))
+  (lib (name player-rescue)(type Legacy)(uri ${KIPRJMOD}/player-rescue.lib)(options "")(descr ""))
 )

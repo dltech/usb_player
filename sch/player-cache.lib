@@ -264,11 +264,11 @@ X ~ 2 0 -150 110 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# Device_C_Polarized
+# Device_CP
 #
-DEF Device_C_Polarized C 0 10 N Y 1 F N
+DEF Device_CP C 0 10 N Y 1 F N
 F0 "C" 25 100 50 H V L CNN
-F1 "Device_C_Polarized" 25 -100 50 H V L CNN
+F1 "Device_CP" 25 -100 50 H V L CNN
 F2 "" 38 -150 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -328,6 +328,27 @@ X 2 2 0 -150 50 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
+# Device_Microphone_Condenser
+#
+DEF Device_Microphone_Condenser MK 0 1 Y N 1 F N
+F0 "MK" -130 50 50 H V R CNN
+F1 "Device_Microphone_Condenser" -130 -25 50 H V R CNN
+F2 "" 0 100 50 V I C CNN
+F3 "" 0 100 50 V I C CNN
+DRAW
+C 0 0 100 0 1 10 N
+S 40 -10 -40 -30 0 1 0 F
+S 40 30 -40 10 0 1 0 F
+P 2 0 1 10 -100 100 -100 -100 N
+P 2 0 1 0 0 -30 0 -60 N
+P 2 0 1 0 0 30 0 60 N
+P 2 0 1 0 10 150 30 150 N
+P 2 0 1 0 20 160 20 140 N
+X - 1 0 -200 100 U 50 50 1 1 P
+X + 2 0 200 100 D 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
 # Device_R
 #
 DEF Device_R R 0 0 N Y 1 F N
@@ -345,11 +366,11 @@ X ~ 2 0 -150 50 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# Device_RotaryEncoder
+# Device_Rotary_Encoder
 #
-DEF Device_RotaryEncoder SW 0 10 Y N 1 F N
+DEF Device_Rotary_Encoder SW 0 10 Y N 1 F N
 F0 "SW" 0 260 50 H V C CNN
-F1 "Device_RotaryEncoder" 0 -260 50 H V C CNN
+F1 "Device_Rotary_Encoder" 0 -260 50 H V C CNN
 F2 "" -150 160 50 H I C CNN
 F3 "" 0 260 50 H I C CNN
 $FPLIST
