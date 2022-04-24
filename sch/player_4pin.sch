@@ -3158,6 +3158,11 @@ Connection ~ 10750 4200
 Wire Wire Line
 	5600 4150 5600 5200
 Wire Wire Line
+	10700 5250 10650 5250
+Wire Wire Line
+	10650 5250 10650 4350
+Connection ~ 10650 4350
+Wire Wire Line
 	10650 5350 10700 5350
 Wire Wire Line
 	10650 5350 10650 6000
@@ -3173,6 +3178,17 @@ Wire Wire Line
 	10550 5450 10550 5550
 Wire Wire Line
 	10550 5550 10700 5550
+$Comp
+L Connector:AudioJack4 J4
+U 1 1 61E9F2A6
+P 10900 5350
+F 0 "J4" H 10750 5550 50  0000 R CNN
+F 1 "AudioJack4" H 11000 5000 50  0000 R CNN
+F 2 "Connector_Audio:Jack_3.5mm_PJ320D_Horizontal" H 10900 5350 50  0001 C CNN
+F 3 "~" H 10900 5350 50  0001 C CNN
+	1    10900 5350
+	-1   0    0    -1  
+$EndComp
 Wire Wire Line
 	7250 4600 7250 5700
 Wire Wire Line
@@ -3566,15 +3582,12 @@ Wire Wire Line
 	1100 6400 1300 6400
 Wire Wire Line
 	1150 6350 1150 6500
-Connection ~ 1150 6500
-Wire Wire Line
-	1150 6500 1800 6500
 Wire Bus Line
 	5200 3500 9850 3500
 Wire Bus Line
-	650  4750 5100 4750
-Wire Bus Line
 	5200 6200 10300 6200
+Wire Bus Line
+	650  4750 5100 4750
 Wire Bus Line
 	8050 1150 8050 3450
 Wire Bus Line
@@ -3587,15 +3600,7 @@ Wire Bus Line
 	5150 1750 5150 7600
 Wire Bus Line
 	3000 1100 3000 4700
-$Comp
-L Connector:AudioJack3 J?
-U 1 1 6346FB50
-P 10900 5450
-F 0 "J?" H 10620 5475 50  0000 R CNN
-F 1 "AudioJack3" H 10620 5384 50  0000 R CNN
-F 2 "" H 10900 5450 50  0001 C CNN
-F 3 "~" H 10900 5450 50  0001 C CNN
-	1    10900 5450
-	-1   0    0    -1  
-$EndComp
+Connection ~ 1150 6500
+Wire Wire Line
+	1150 6500 1800 6500
 $EndSCHEMATC
