@@ -3588,12 +3588,12 @@ Wire Bus Line
 Wire Bus Line
 	3000 1100 3000 4700
 $Comp
-L Connector:AudioJack3 J?
+L Connector:AudioJack3 J4
 U 1 1 6346FB50
 P 10900 5450
-F 0 "J?" H 10620 5475 50  0000 R CNN
+F 0 "J4" H 10620 5475 50  0000 R CNN
 F 1 "AudioJack3" H 10620 5384 50  0000 R CNN
-F 2 "" H 10900 5450 50  0001 C CNN
+F 2 "local:uefang" H 10900 5450 50  0001 C CNN
 F 3 "~" H 10900 5450 50  0001 C CNN
 	1    10900 5450
 	-1   0    0    -1  
